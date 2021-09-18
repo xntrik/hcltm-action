@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: hcltm validate
-        uses: xntrik/hcltm-action@v0.0.2
+        uses: xntrik/hcltm-action@v0.0.3
         with:
           command: 'validate'
           files: './hcl-files/*'
@@ -47,12 +47,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: HCLTM Validate
-        uses: xntrik/hcltm-action@v0.0.2
+        uses: xntrik/hcltm-action@v0.0.3
         with:
           command: 'validate'
           files: './hcl-files/*'
       - name: HCLTM Dashboard
-        uses: xntrik/hcltm-action@v0.0.2
+        uses: xntrik/hcltm-action@v0.0.3
         with:
           command: 'dashboard'
           files: './hcl-files/*'
