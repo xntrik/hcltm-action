@@ -1,7 +1,6 @@
 ## 0.0.3
-### xx
+### Sep 18, 2021
 
 CHANGES:
 
-* README now includes instructions for running with Docker
-
+* First release with dashboard, validate and dfd commands

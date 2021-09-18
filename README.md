@@ -108,6 +108,14 @@ You can see a working example of this workflow at [hcltm-actions-example](https:
 
 The GitHub Actions framework allows you to trigger this (and other) actions on _many combinations_ of events. Read through [Workflow syntax for GitHub Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions) for ideas and advanced examples.
 
+## Versioning
+
+The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
+
+```yaml
+- uses: xntrik/hcltm-action:v0.0.3
+```
+
 ## License
 
 The source code for this project is released under the [MIT License](LICENSE). This project is not associated with GitHub.
