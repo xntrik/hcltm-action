@@ -1,16 +1,18 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'hcltm'
+description: 'An action to run hcltm commands in your GitHub Workflows'
+author: 'Christian @xntrik Frichot'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  command:
+    description: 'What hcltm command to run'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'validate'
+  files:
+    description: 'Target files'
+    required: true
+    default: '*'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://xntrik/hcltm-action:latest'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.command }}
+    - ${{ inputs.files }}

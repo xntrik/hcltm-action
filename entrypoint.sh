@@ -1,5 +1,9 @@
-#!/bin/sh -l
-
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+echo ">>> Running command"
+echo ""
+if [ $1 = "validate" ]
+then
+  bash -c "set -e;  set -o pipefail; hcltm validate $2"
+fi
