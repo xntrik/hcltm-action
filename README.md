@@ -127,9 +127,9 @@ After you've updated any contents in the [Dockerfile](Dockerfile) or [entrypoint
 3. Update the image docker version referenced in [action.yml](action.yml)
 4. Update the [CHANGELOG.md](CHANGELOG.md)
 5. Update the version number references and examples in the [README.md](README.md)
-6. Git push these updates to `main`
-7. Tag the repo with the new version
-8. Tag the repo with the `latest` tag
+6. Git push these updates to `main` branch
+7. Tag the repo with the new version: `$ git tag -a v0.0.x -m 'v0.0.x' && git push origin --tags`
+8. Tag the repo with the `latest` tag: `$ git tag -f latest && git push --force origin latest`
 9. Make sure you update the examples in https://github.com/xntrik/hcltm-action-example
 
 ## License
