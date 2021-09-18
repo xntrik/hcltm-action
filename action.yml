@@ -7,12 +7,16 @@ inputs:
     required: true
     default: 'validate'
   files:
-    description: 'Target files'
+    description: 'files to process with hcltm'
     required: true
     default: '*'
+  outdir:
+    description: 'outdir, used with dashboard command'
+    required: false
 runs:
   using: 'docker'
   image: 'docker://xntrik/hcltm-action:latest'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
+    - ${{ inputs.outdir }}
