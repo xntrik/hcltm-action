@@ -3,7 +3,7 @@ description: 'An action to run hcltm commands in your GitHub Workflows'
 author: 'Christian @xntrik Frichot'
 inputs:
   command:
-    description: 'What hcltm command to run'
+    description: 'What hcltm command to run - either validate, dashboard or dfd'
     required: true
     default: 'validate'
   files:
@@ -15,7 +15,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:latest'
+  image: 'docker://xntrik/hcltm-action:v0.0.3'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
