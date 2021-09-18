@@ -116,6 +116,22 @@ The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.
 - uses: xntrik/hcltm-action:v0.0.3
 ```
 
+## Releasing
+
+There are a few steps involved in updating the github action.
+
+After you've updated any contents in the [Dockerfile](Dockerfile) or [entrypoint.sh](entrypoint.sh), you'll need to re-build the image, and push it to Docker hub. To do this:
+
+1. Update the `VERSION` in the [Makefile](Makefile)
+2. Build and push the new docker image: `$ make imagepush`
+3. Update the image docker version referenced in [action.yml](action.yml)
+4. Update the [CHANGELOG.md](CHANGELOG.md)
+5. Update the version number references and examples in the [README.md](README.md)
+6. Git push these updates to `main`
+7. Tag the repo with the new version
+8. Tag the repo with the `latest` tag
+9. Make sure you update the examples in https://github.com/xntrik/hcltm-action-example
+
 ## License
 
 The source code for this project is released under the [MIT License](LICENSE). This project is not associated with GitHub.
