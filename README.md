@@ -68,17 +68,41 @@ jobs:
 
 You can see a working example of this workflow at [hcltm-actions-example](https://github.com/xntrik/hcltm-action-example/actions).
 
+### Generate DFD files
+
+This example workflow will kick off any pushes to the `main` branch, but will not re-write back to the repo.
+
+```yaml
+name: hcltm dfd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hcltm-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: HCLTM DFD
+        uses: xntrik/hcltm-action@v0.0.3
+        with:
+          command: 'dfd'
+          files: './hcl-files/*'
+          outdir: './dfd'
+```
+
+You can see a working example of this workflow at [hcltm-actions-example](https://github.com/xntrik/hcltm-action-example/actions).
+
 ## Supported Parameters
 
-| Parameter | Description | Default |
-| --------- | ----------- | ------- |
-| `command` \* | This is the `hcltm` command to execute. Needs to be `validate`, `dashboard`, or `dfd` | `validate` |
-| `files` \* | This is the location of files in the repo to parse with `hcltm` | `*` |
-| `outdir` | For the `dashboard` or `dfd` mode, this is required, and is where the generated output will be written | |
-
-### Notes
-
-- Parameters with the `*` are required.
+| Parameter | Description | Default | Required |
+| --------- | ----------- | ------- | -------- |
+| `command` | This is the `hcltm` command to execute. Needs to be `validate`, `dashboard`, or `dfd` | `validate` | Y |
+| `files` | This is the location of files in the repo to parse with `hcltm` | `*` | Y |
+| `outdir` | For the `dashboard` or `dfd` mode, this is required, and is where the generated output will be written | | N |
 
 ## Event Triggers
 
