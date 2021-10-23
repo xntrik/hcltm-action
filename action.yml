@@ -15,7 +15,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.3'
+  image: 'docker://xntrik/hcltm-action:v0.0.4'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}

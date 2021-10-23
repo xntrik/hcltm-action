@@ -113,7 +113,7 @@ The GitHub Actions framework allows you to trigger this (and other) actions on _
 The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
 
 ```yaml
-- uses: xntrik/hcltm-action:v0.0.3
+- uses: xntrik/hcltm-action:v0.0.4
 ```
 
 ## Releasing
