@@ -13,10 +13,34 @@ inputs:
   outdir:
     description: 'outdir, used with dashboard command'
     required: false
+  dashboard-template:
+    description: 'dashboard-template, used with the dashboard command'
+    required: false
+    default: ""
+  dashboard-filename:
+    description: 'dashboard-filename, used with the dashboard command'
+    required: false
+    default: ""
+  dashboard-html:
+    description: 'dashboard-html, used with the dashboard command. Must be a string of true or false'
+    required: false
+    default: "false"
+  threatmodel-template: 'threatmodel-template, used with the dashboard command'
+    required: false
+    default: ""
+  dfd-type:
+    description: 'dfd-type, used with the dfd command. Must be a string of png, svg or dot. We default to PNG output'
+    required: false
+    default: "png"
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.4'
+  image: 'docker://xntrik/hcltm-action:dev'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
     - ${{ inputs.outdir }}
+    - ${{ inputs.dashboard-template }}
+    - ${{ inputs.dashboard-filename }}
+    - ${{ inputs.dashboard-html }}
+    - ${{ inputs.threatmodel-template }}
+    - ${{ inputs.dfd-type }}

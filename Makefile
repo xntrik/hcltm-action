@@ -6,6 +6,10 @@ default: help
 image: ## Create local docker image
 	@docker build -t $(DOCKERNAME) .
 
+imagepush-dev: ## Create a fresh docker image and push to the configured repo as dev
+	@docker build --rm --force-rm -t $(DOCKERNAME):dev .
+	@docker push $(DOCKERNAME):dev
+
 imagepush: ## Create a fresh docker image and push to the configured repo
 	@docker build --rm --force-rm -t $(DOCKERNAME):latest -t $(DOCKERNAME):$(VERSION) .
 	@docker push -a $(DOCKERNAME)
