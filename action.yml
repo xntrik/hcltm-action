@@ -25,7 +25,8 @@ inputs:
     description: 'dashboard-html, used with the dashboard command. Must be a string of true or false'
     required: false
     default: 'false'
-  threatmodel-template: 'threatmodel-template, used with the dashboard command'
+  threatmodel-template:
+    description: 'threatmodel-template, used with the dashboard command'
     required: false
     default: ''
   dfd-type:
