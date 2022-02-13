@@ -1,3 +1,11 @@
+## 0.0.5
+### Feb 13, 2022
+
+CHANGES:
+
+* Updated to use hcltm v0.1.1
+* Expanded dashboard and dfd flags
+
 ## 0.0.4
 ### Oct 23, 2021
 

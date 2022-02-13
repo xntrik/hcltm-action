@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: hcltm validate
-        uses: xntrik/hcltm-action@v0.0.4
+        uses: xntrik/hcltm-action@v0.0.5
         with:
           command: 'validate'
           files: './hcl-files/*'
@@ -47,12 +47,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: HCLTM Validate
-        uses: xntrik/hcltm-action@v0.0.4
+        uses: xntrik/hcltm-action@v0.0.5
         with:
           command: 'validate'
           files: './hcl-files/*'
       - name: HCLTM Dashboard
-        uses: xntrik/hcltm-action@v0.0.4
+        uses: xntrik/hcltm-action@v0.0.5
         with:
           command: 'dashboard'
           files: './hcl-files/*'
@@ -87,7 +87,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: HCLTM DFD
-        uses: xntrik/hcltm-action@v0.0.4
+        uses: xntrik/hcltm-action@v0.0.5
         with:
           command: 'dfd'
           files: './hcl-files/*'
@@ -103,6 +103,11 @@ You can see a working example of this workflow at [hcltm-actions-example](https:
 | `command` | This is the `hcltm` command to execute. Needs to be `validate`, `dashboard`, or `dfd` | `validate` | Y |
 | `files` | This is the location of files in the repo to parse with `hcltm` | `*` | Y |
 | `outdir` | For the `dashboard` or `dfd` mode, this is required, and is where the generated output will be written | | N |
+| `dashboard-template` | For the `dashboard` mode, allows you to specify a dashboard template file | | N |
+| `dashboard-filename` | For the `dashboard` mode, allows you to specify a dashboard filename | | N |
+| `dashboard-html` | For the `dashboard` mode, allows you to specify whether the output is html. Needs to be `true` or `false` | `false` | N |
+| `threatmodel-template` | For the `dashboard` mode, allows you to specify a threatmodel template file | | N |
+| `dfd-type` | For the `dfd` mode, allows you to set the output type. Needs to be `png`, `svg`, or `dot` | `png` | N |
 
 ## Event Triggers
 
@@ -113,7 +118,7 @@ The GitHub Actions framework allows you to trigger this (and other) actions on _
 The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
 
 ```yaml
-- uses: xntrik/hcltm-action:v0.0.4
+- uses: xntrik/hcltm-action:v0.0.5
 ```
 
 ## Releasing
