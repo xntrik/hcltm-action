@@ -16,22 +16,22 @@ inputs:
   dashboard-template:
     description: 'dashboard-template, used with the dashboard command'
     required: false
-    default: ""
+    default: ''
   dashboard-filename:
     description: 'dashboard-filename, used with the dashboard command'
     required: false
-    default: ""
+    default: ''
   dashboard-html:
     description: 'dashboard-html, used with the dashboard command. Must be a string of true or false'
     required: false
-    default: "false"
+    default: 'false'
   threatmodel-template: 'threatmodel-template, used with the dashboard command'
     required: false
-    default: ""
+    default: ''
   dfd-type:
     description: 'dfd-type, used with the dfd command. Must be a string of png, svg or dot. We default to PNG output'
     required: false
-    default: "png"
+    default: 'png'
 runs:
   using: 'docker'
   image: 'docker://xntrik/hcltm-action:dev'
