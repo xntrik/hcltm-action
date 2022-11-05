@@ -27,6 +27,10 @@ then
   then
     additionaloptions="${additionaloptions} -threatmodel-template=${7}"
   fi
+  if [ "$9" != "" ]
+  then
+    additionaloptions="${additionaloptions} -out-ext=${9}"
+  fi
   bash -c "set -e; set -o pipefail; hcltm dashboard -overwrite -outdir=$3 $additionaloptions $2"
 elif [ $1 = "dfd" ]
 then

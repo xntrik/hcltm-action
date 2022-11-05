@@ -33,9 +33,13 @@ inputs:
     description: 'dfd-type, used with the dfd command. Must be a string of png, svg or dot. We default to PNG output'
     required: false
     default: 'png'
+  outext:
+    description: 'outext, used with the dashboard command to pass the -out-ext flag'
+    required: false
+    default: ''
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.5'
+  image: 'docker://xntrik/hcltm-action:v0.0.6'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
@@ -45,3 +49,4 @@ runs:
     - ${{ inputs.dashboard-html }}
     - ${{ inputs.threatmodel-template }}
     - ${{ inputs.dfd-type }}
+    - ${{ inputs.outext }}
