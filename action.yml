@@ -39,7 +39,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.7'
+  image: 'docker://xntrik/hcltm-action:v0.0.8'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
