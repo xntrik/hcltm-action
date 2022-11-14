@@ -128,7 +128,7 @@ There are a few steps involved in updating the github action.
 
 After you've updated any contents in the [Dockerfile](Dockerfile) or [entrypoint.sh](entrypoint.sh), you'll need to re-build the image, and push it to Docker hub. To do this:
 
-1. Update the `VERSION` in the [Makefile](Makefile)
+1. Update the `VERSION` in the [Makefile](Makefile) and the image tag in the [Dockerfile](Dockerfile) < particularly if this is for a new hcltm version
 2. Build and push the new docker image: `$ make imagepush`
 3. Update the image docker version referenced in [action.yml](action.yml)
 4. Update the [CHANGELOG.md](CHANGELOG.md)
