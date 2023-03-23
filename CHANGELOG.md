@@ -1,3 +1,10 @@
+## 0.0.10
+### Mar 23, 2023
+
+CHANGES:
+
+* Adjusted to hcltm v0.1.6
+
 ## 0.0.9
 ### Nov 14, 2022
 

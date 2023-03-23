@@ -38,11 +38,11 @@ then
   additionaloptions=""
   if [ "$8" = "svg" ]
   then
-    additionaloptions="-svg"
+    additionaloptions="-format=svg"
   fi
   if [ "$8" = "dot" ]
   then
-    additionaloptions="-dot"
+    additionaloptions="-format=dot"
   fi
     
   bash -c "set -e; set -o pipefail; hcltm dfd -overwrite -outdir=$3 $additionaloptions $2"

@@ -1,5 +1,5 @@
 DOCKERNAME=xntrik/hcltm-action
-VERSION=v0.0.9
+VERSION=v0.0.10
 
 default: help
 
