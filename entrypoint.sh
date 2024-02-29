@@ -46,4 +46,16 @@ then
   fi
     
   bash -c "set -e; set -o pipefail; hcltm dfd -overwrite -outdir=$3 $additionaloptions $2"
+elif [ $1 = "export" ]
+then
+  echo ">>>> Running export"
+  additionaloptions=""
+  if [ "$10" = "json" ]
+    additionaloptions="-format=json"
+  fi
+  if [ "$10" = "otm" ]
+    additionaloptions="-format=otm"
+  fi
+
+  bash -c "set -e; set -o pipefail; hcltm export -overwrite -output=$11 $additionaloptions $2"
 fi
