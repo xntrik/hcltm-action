@@ -47,7 +47,7 @@ inputs:
     default: 'output.json'
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.11'
+  image: 'docker://xntrik/hcltm-action:v0.0.12'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}

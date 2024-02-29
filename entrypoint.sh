@@ -51,9 +51,11 @@ then
   echo ">>>> Running export"
   additionaloptions=""
   if [ "$10" = "json" ]
+  then
     additionaloptions="-format=json"
   fi
   if [ "$10" = "otm" ]
+  then
     additionaloptions="-format=otm"
   fi
 

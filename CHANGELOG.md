@@ -1,3 +1,10 @@
+## 0.0.12
+### Mar 1, 2024
+
+CHANGES:
+
+* Fixed a breaking typo in the entrypoint
+
 ## 0.0.11
 ### Mar 1, 2024
 
