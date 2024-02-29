@@ -1,3 +1,11 @@
+## 0.0.11
+### Mar 1, 2024
+
+CHANGES:
+
+* Adjusted to hcltm v0.1.7
+* Added 'export' mode
+
 ## 0.0.10
 ### Mar 23, 2023
 

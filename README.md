@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: hcltm validate
-        uses: xntrik/hcltm-action@v0.0.10
+        uses: xntrik/hcltm-action@v0.0.11
         with:
           command: 'validate'
           files: './hcl-files/*'
@@ -47,12 +47,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: HCLTM Validate
-        uses: xntrik/hcltm-action@v0.0.10
+        uses: xntrik/hcltm-action@v0.0.11
         with:
           command: 'validate'
           files: './hcl-files/*'
       - name: HCLTM Dashboard
-        uses: xntrik/hcltm-action@v0.0.10
+        uses: xntrik/hcltm-action@v0.0.11
         with:
           command: 'dashboard'
           files: './hcl-files/*'
@@ -87,7 +87,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: HCLTM DFD
-        uses: xntrik/hcltm-action@v0.0.10
+        uses: xntrik/hcltm-action@v0.0.11
         with:
           command: 'dfd'
           files: './hcl-files/*'
@@ -96,11 +96,41 @@ jobs:
 
 You can see a working example of this workflow at [hcltm-actions-example](https://github.com/xntrik/hcltm-action-example/actions).
 
+### Export JSON files
+
+This example workflow will kick off any pushes to the `main` branch, but will not re-write back to the repo. OTM formatted JSON file will be written to `./output/tm.json`
+
+```yaml
+name: hcltm export
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hcltm-export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: HCLTM DFD
+        uses: xntrik/hcltm-action@v0.0.11
+        with:
+          command: 'export'
+          files: './hcl-files/*'
+          export-format: 'otm'
+          export-output: './output/tm.json'
+```
+
+You can see a working example of this workflow at [hcltm-actions-example](https://github.com/xntrik/hcltm-action-example/actions).
+
+
 ## Supported Parameters
 
 | Parameter | Description | Default | Required |
 | --------- | ----------- | ------- | -------- |
-| `command` | This is the `hcltm` command to execute. Needs to be `validate`, `dashboard`, or `dfd` | `validate` | Y |
+| `command` | This is the `hcltm` command to execute. Needs to be `validate`, `dashboard`, `export`, or `dfd` | `validate` | Y |
 | `files` | This is the location of files in the repo to parse with `hcltm` | `*` | Y |
 | `outdir` | For the `dashboard` or `dfd` mode, this is required, and is where the generated output will be written | | N |
 | `outext` | For the `dashboard` mode, allows you to specify the extension of generated files | | N |
@@ -109,6 +139,8 @@ You can see a working example of this workflow at [hcltm-actions-example](https:
 | `dashboard-html` | For the `dashboard` mode, allows you to specify whether the output is html. Needs to be `true` or `false` | `false` | N |
 | `threatmodel-template` | For the `dashboard` mode, allows you to specify a threatmodel template file | | N |
 | `dfd-type` | For the `dfd` mode, allows you to set the output type. Needs to be `png`, `svg`, or `dot` | `png` | N |
+| `export-format` | For the `export` mode, allows you to set the export format. Needs to be `json`, or `otm` | `json` | N |
+| `export-output` | For the `export` mode, allows you to set where the exported file is saved. | | N |
 
 ## Event Triggers
 
@@ -119,7 +151,7 @@ The GitHub Actions framework allows you to trigger this (and other) actions on _
 The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
 
 ```yaml
-- uses: xntrik/hcltm-action:v0.0.10
+- uses: xntrik/hcltm-action:v0.0.11
 ```
 
 ## Releasing

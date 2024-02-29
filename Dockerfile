@@ -1,4 +1,4 @@
-FROM xntrik/hcltm:v0.1.6
+FROM xntrik/hcltm:v0.1.7
 RUN apk update
 RUN apk add --update bash
 

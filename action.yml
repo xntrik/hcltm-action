@@ -3,7 +3,7 @@ description: 'An action to run hcltm commands in your GitHub Workflows'
 author: 'Christian @xntrik Frichot'
 inputs:
   command:
-    description: 'What hcltm command to run - either validate, dashboard or dfd'
+    description: 'What hcltm command to run - either validate, dashboard, export or dfd'
     required: true
     default: 'validate'
   files:
@@ -37,9 +37,17 @@ inputs:
     description: 'outext, used with the dashboard command to pass the -out-ext flag'
     required: false
     default: ''
+  export-format:
+    description: "export-format, used with the export command to pass the -format flag"
+    required: false
+    default: 'json'
+  export-output:
+    description: "export-output, used with the export command to pass the -output flag"
+    required: false
+    default: 'output.json'
 runs:
   using: 'docker'
-  image: 'docker://xntrik/hcltm-action:v0.0.10'
+  image: 'docker://xntrik/hcltm-action:v0.0.11'
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
@@ -50,3 +58,5 @@ runs:
     - ${{ inputs.threatmodel-template }}
     - ${{ inputs.dfd-type }}
     - ${{ inputs.outext }}
+    - ${{ inputs.export-format }}
+    - ${{ inputs.export-output }}
