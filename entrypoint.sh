@@ -50,14 +50,14 @@ elif [ $1 = "export" ]
 then
   echo ">>>> Running export"
   additionaloptions=""
-  if [ "$10" = "json" ]
+  if [ "${10}" = "json" ]
   then
     additionaloptions="-format=json"
   fi
-  if [ "$10" = "otm" ]
+  if [ "${10}" = "otm" ]
   then
     additionaloptions="-format=otm"
   fi
 
-  bash -c "set -e; set -o pipefail; hcltm export -overwrite -output=$11 $additionaloptions $2"
+  bash -c "set -e; set -o pipefail; hcltm export -overwrite -output=${11} $additionaloptions $2"
 fi
